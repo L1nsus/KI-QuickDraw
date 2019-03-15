@@ -9,7 +9,7 @@ function setup(){
   background(255);
   
   // Setzt die Leinwand bei Klick auf den Löschen-Knopf zurück
-  document.getElementById("clrButton")addEventListener("click", (ev)=>{
+  document.getElementById("clrButton").addEventListener("click", (ev)=>{
     background(255);
   });
 }
