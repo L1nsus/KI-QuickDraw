@@ -1,16 +1,3 @@
-const width = 280;
-const height = 280;
-
-function onloaded(ev) {
-  const canvasNode = document.getElementById('canvas');
-  const canvas = canvasNode.getContext('2d');
-  clearCanvas();
-
-
-  function clearCanvas(){
-    canvas.fillStyle = "white";
-    canvas.fillRect(0, 0, width, height);
-  }
+function setup(){
+  let canvas = createCanvas(280, 280);
 }
-
-document.addEventListener("DOMContentLoaded", onloaded);
