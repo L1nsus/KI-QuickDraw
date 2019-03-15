@@ -1,1 +1,2 @@
-let m = new Matrix(2, 3);
+const canvasNode = document.getElementById('canvas');
+const canvas = canvasNode.getContext('2d');
