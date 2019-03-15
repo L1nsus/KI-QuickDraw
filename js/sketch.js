@@ -1,10 +1,10 @@
-let clearBtn;
+let clearButton;
 
 function setup(){
   let canvas = createCanvas(280, 280);
   canvas.parent("canvas");
   background(255);
-  clearBtn = select("#clear");
+  clearButton = select("#clearButton");
 }
 
 function draw(){
@@ -13,7 +13,7 @@ function draw(){
   if(mouseIsPressed){
     line(pmouseX, pmouseY, mouseX, mouseY);
   }
-  clearBtn.mousePressed(()=>{
+  clearButton.mousePressed(()=>{
     background(255);
   });
 }
