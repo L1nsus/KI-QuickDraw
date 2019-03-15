@@ -1,4 +1,5 @@
-const width, height;
+const width = 280;
+const height = 280;
 
 function onloaded(ev) {
   const canvasNode = document.getElementById('canvas');
@@ -8,7 +9,7 @@ function onloaded(ev) {
 
   function clearCanvas(){
     canvas.fillStyle = "51";//'rgb(255, 255, 255)';
-    canvas.fillRect(0, 0, 280, 280);
+    canvas.fillRect(0, 0, width, height);
   }
 }
 
