@@ -1,1 +1,1 @@
-alert(0);
+let m = new Matrix(2, 3);
