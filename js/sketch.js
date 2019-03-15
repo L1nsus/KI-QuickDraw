@@ -3,7 +3,7 @@ function onloaded(ev) {
   const canvas = canvasNode.getContext('2d');
   
   canvas.fillStyle = 'rgb(255, 255, 255)';
-  canvas.fillRect(30, 30, 50, 50);
+  canvas.fillRect(0, 0, 280, 280);
   
 }
 
