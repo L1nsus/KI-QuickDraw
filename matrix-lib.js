@@ -3,7 +3,7 @@
 // Contents: Librarry fort Matrix Math
 
 class Matrix{
-  constructor(){
-    this.m = new Array();
+  constructor(n, k){
+    this.m = new Array(n).fill(new Array(k).fill(0));
   }
 }
