@@ -8,7 +8,7 @@ function onloaded(ev) {
 
 
   function clearCanvas(){
-    canvas.fillStyle = "255";//'rgb(255, 255, 255)';
+    canvas.fillStyle = "white";
     canvas.fillRect(0, 0, width, height);
   }
 }
