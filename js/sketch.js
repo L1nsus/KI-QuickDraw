@@ -4,7 +4,7 @@ function setup(){
   let canvas = createCanvas(280, 280);
   canvas.parent("canvas");
   background(255);
-  clrButton = select("#clrButton");
+  clrButton = document.getElementById("clrButton");
 }
 
 function draw(){
