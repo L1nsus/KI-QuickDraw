@@ -1,6 +1,6 @@
 // Authors: Linus Nadler, Dominik Dreiheller
 // License: Apache 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
-// Contents: Library fort Matrix Math
+// Contents: Library for Matrix Math
 
 class Matrix{
   constructor(n, k){
