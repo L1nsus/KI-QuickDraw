@@ -1,6 +1,8 @@
+let canvasNode, canvas;
+
 function onloaded(ev) {
-  const canvasNode = document.getElementById('canvas');
-  const canvas = canvasNode.getContext('2d');
+  canvasNode = document.getElementById('canvas');
+  canvas = canvasNode.getContext('2d');
   clearCanvas();
 }
 
