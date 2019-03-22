@@ -2,7 +2,7 @@ let clrButton;
 
 function setup(){
   // Create Canvas
-  let canvas = createCanvas(280, 280);
+  let canvas = createCanvas(560, 560);
   canvas.parent("canvas");
   
   // Leinwand wir mit weiß gefüllt
@@ -15,7 +15,7 @@ function setup(){
 function draw(){
   // Schwarzer Pinsel
   stroke(0);
-  strokeWeight(4);
+  strokeWeight(8);
   if(mouseIsPressed){
     // Wenn die Maus gerückt wird, dann zeichne eine Linie
     line(pmouseX, pmouseY, mouseX, mouseY);
