@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-.mt{
-  font-family: 'Montserrat' !important, sans-serif !important;
-}
-
 canvas{
   border: 1px solid black;
   margin-top: 16px;
