@@ -30,7 +30,7 @@ async function loadDataFromFile(URL){
     position += chunk.length;
   }
   console.log(chunksAll);
-  document.getElementById("progbar-wrapper").style.display="none;
+  document.getElementById("progbar-wrapper").style.display="none";
   return chunksAll;
 }
 
