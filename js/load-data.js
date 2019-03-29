@@ -35,12 +35,12 @@ while(true) {
   console.log(Math.round(receivedLength / contentLength) + "% fertig ...");
 }
 
-// Step 4: concatenate chunks into single Uint8Array
-let chunksAll = new Uint8Array(receivedLength); // (4.1)
+let chunksAll = new Uint8Array(receivedLength);
 let position = 0;
 for(let chunk of chunks) {
-  chunksAll.set(chunk, position); // (4.2)
+  chunksAll.set(chunk, position);
   position += chunk.length;
 }
+console.log(chunksAll);
 return chunksAll;
 }
