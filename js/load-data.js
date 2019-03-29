@@ -28,7 +28,6 @@ async function loadDataFromFile(URL){
     chunksAll.set(chunk, position);
     position += chunk.length;
   }
-  console.log(chunksAll);
   document.getElementById("progbar-wrapper").style.display="none";
   return await Promise.resolve(chunksAll);
 }
