@@ -32,7 +32,7 @@ while(true) {
   chunks.push(value);
   receivedLength += value.length;
 
-  console.log(Math.round(receivedLength / contentLength) + "% fertig ...");
+  console.log(Math.round(contentLength / receivedLength) + "% fertig ...");
 }
 
 let chunksAll = new Uint8Array(receivedLength);
