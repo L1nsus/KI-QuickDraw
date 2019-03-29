@@ -13,7 +13,7 @@ function loadDataFromFile(path){
   );
 }
 
-function TESTFOO(){
+async function TESTFOO(){
 // Step 1: start the fetch and obtain a reader
 let response = await fetch('https://api.github.com/repos/iliakan/javascript-tutorial-en/commits?per_page=100');
 
