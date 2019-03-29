@@ -2,7 +2,7 @@ async function loadDataFromFile(URL){
 
   let response = await fetch(URL);
   
-  document.getElementById("progbar-wrapper").style.display="block;
+  document.getElementById("progbar-wrapper").style.display="block";
 
   const reader = response.body.getReader();
   const contentLength = +response.headers.get('Content-Length');
