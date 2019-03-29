@@ -35,5 +35,5 @@ async function loadDataFromFile(URL){
 }
 
 function updateModal(percentage){
-  document.getElemetById("progbar").style.width=percentage+"%";
+  document.getElementById("progbar").style.width=percentage+"%";
 }
