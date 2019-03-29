@@ -34,3 +34,7 @@ html {
 #progbar-text{
   text-align: justify;
 }
+
+.num{
+  font-variant-numeric: tabular-nums;
+}
