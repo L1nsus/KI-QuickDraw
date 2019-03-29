@@ -19,7 +19,7 @@ canvas{
 
 .bg{
   /*linear-gradient(141deg, #607d8b, #009688);*/
-  linear-gradient(to bottom right, #607d8b, #009688);
+  background: linear-gradient(to bottom right, #607d8b, #009688);
 }
 
 /*Default font is Googles Quicksand*/
