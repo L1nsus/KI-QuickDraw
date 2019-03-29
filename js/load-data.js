@@ -30,7 +30,7 @@ async function loadDataFromFile(URL){
   }
   console.log(chunksAll);
   document.getElementById("progbar-wrapper").style.display="none";
-  return chunksAll;
+  return await Promise.resolve(chunksAll);
 }
 
 function updateModal(percentage, URL){
