@@ -13,9 +13,9 @@ function loadDataFromFile(path){
   );
 }
 
-async function TESTFOO(){
+async function TESTFOO(URL){
 // Step 1: start the fetch and obtain a reader
-let response = await fetch('https://api.github.com/repos/iliakan/javascript-tutorial-en/commits?per_page=100');
+let response = await fetch(URL);
 
 const reader = response.body.getReader();
 
@@ -48,8 +48,5 @@ for(let chunk of chunks) {
 
 // Step 5: decode into a string
 let result = new TextDecoder("utf-8").decode(chunksAll);
-
-// We're done!
-let commits = JSON.parse(result);
-alert(commits[0].author.login);
+return result;
 }
