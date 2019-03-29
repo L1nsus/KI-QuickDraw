@@ -13,18 +13,15 @@ function loadDataFromFile(path){
   );
 }
 
-async function TESTFOO(URL){
-// Step 1: start the fetch and obtain a reader
+async function loadDataFromFile(URL){
+
 let response = await fetch(URL);
 
 const reader = response.body.getReader();
-
-// Step 2: get total length
 const contentLength = +response.headers.get('Content-Length');
 
-// Step 3: read the data
-let receivedLength = 0; // length at the moment
-let chunks = []; // array of received binary chunks (comprises the body)
+let receivedLength = 0;
+let chunks = [];
 while(true) {
   const {done, value} = await reader.read();
 
@@ -35,7 +32,7 @@ while(true) {
   chunks.push(value);
   receivedLength += value.length;
 
-  console.log(`Received ${receivedLength} of ${contentLength}`)
+  console.log(Math.round(receivedLength / contentLength) + "% fertig ...");
 }
 
 // Step 4: concatenate chunks into single Uint8Array
@@ -45,8 +42,5 @@ for(let chunk of chunks) {
   chunksAll.set(chunk, position); // (4.2)
   position += chunk.length;
 }
-
-// Step 5: decode into a string
-let result = new TextDecoder("utf-8").decode(chunksAll);
-return result;
+return chunksAll;
 }
