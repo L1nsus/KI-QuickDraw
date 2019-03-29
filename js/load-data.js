@@ -20,7 +20,7 @@ async function loadDataFromFile(URL){
     receivedLength += value.length;
 
     //console.log(Math.round(100 * (receivedLength / contentLength)) + "% fertig ...");
-    updateModal(Math.round(100 * (receivedLength / contentLength)));
+    updateModal(100 * (receivedLength / contentLength));
   }
 
   let chunksAll = new Uint8Array(receivedLength);
