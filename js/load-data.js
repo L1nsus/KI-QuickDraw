@@ -37,6 +37,6 @@ function updateModal(percentage, URL){
     URL.split("/").reverse()[0] + 
     "</i> geladen.<br><div class=\"w3-center\"><div class=\"num\">" +
     Math.round(percentage) + 
-    </div>"% fertig</div>";
+    "</div>% fertig</div>";
   document.getElementById("progbar").style.width=percentage+"%";
 }
