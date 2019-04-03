@@ -44,3 +44,7 @@ html {
 .monospace {
   font-family: "Roboto Mono", monospace;
 }
+
+.transparent{
+  background-color:rgba(0, 0, 0, 0);
+}
