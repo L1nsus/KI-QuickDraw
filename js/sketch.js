@@ -42,6 +42,11 @@ function loadData(){
             pizzasDataArray = DATA;
             loadDataFromFile("./data/swords10000.bin").then( DATA => {
               swordsDataArray = DATA;
+              document.getElementById("info-wrapper").style.display="block";
+              document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
+                <span onclick=\"document.getElementById(\'info-wrapper\').style.display=\'none\'\"\
+                  class=\"w3-button w3-display-topright\"><i class=\"material-icons w3-xlarge\">cancel</i></span>\
+                Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
             });
           });
         });
@@ -54,10 +59,5 @@ function loadData(){
       throw(ERR);
       return null;
     });
-    document.getElementById("info-wrapper").style.display="block";
-    document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
-      <span onclick=\"document.getElementById(\'info-wrapper\').style.display=\'none\'\"\
-        class=\"w3-button w3-display-topright\"><i class=\"material-icons w3-xlarge\">cancel</i></span>\
-      Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
   }, 3000);
 }
