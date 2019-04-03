@@ -15,7 +15,7 @@ function setup(){
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
   
-  window.setTimeout(() => document.getElementById("loading-init-wrapper").style.display="none", 1000);
+  window.setTimeout(() => document.getElementById("loading-init-wrapper").className.replace("w3-show", "w3-hide"), 1000);
 }
 
 function draw(){
