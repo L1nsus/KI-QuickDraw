@@ -37,21 +37,3 @@ html {
 .num{
   font-variant-numeric: tabular-nums;
 }
-
-.dlicon{
-  animation: dlicon-anim 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite alternate both;
-}
-
-@keyframes dlicon-anim {
-  from {
-    transform: scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: scale(0);
-    opacity: 0.5;
-  }
-}
-
-
-
