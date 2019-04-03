@@ -28,7 +28,7 @@ function draw(){
 
 function loadData(){
   document.getElementById("info-wrapper").style.display="block";
-  document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-xxlarge\">cloud_download</i>\
+  document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-display-topright w3-jumbo\">cloud_download</i>\
     <br>Es werden nun Datensets geladen: Dies kann mehrere Minuten in Anspruch nehmen.\
     <br><div class=\"w3-center\">Bitte haben sie Geduld...</div>";
   window.setTimeout( () => {
@@ -58,7 +58,7 @@ function loadData(){
     document.getElementById("info-text").innerHTML="<div class=\"w3-xxlarge\">\
       <span onclick=\"document.getElementById(\'info-wrapper\').style.display=\'none\'\"\
         class=\"w3-button w3-display-topright\"><i class=\"material-icons w3-xlarge\">cancel</i></span>\
-      Fertig<br><i class=\"material-icons\">cloud_done</i></div>";
+      Fertig <i class=\"material-icons\">cloud_done</i></div>";
     document.getElementById("info-wrapper").style.display="none";
   }, 3000);
 }
