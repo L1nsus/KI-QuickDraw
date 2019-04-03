@@ -60,5 +60,5 @@ function loadData(){
         class=\"w3-button w3-display-topright\"><i class=\"material-icons w3-xlarge\">cancel</i></span>\
       Fertig<br><i class=\"material-icons\">cloud_done</i></div>";
     document.getElementById("info-wrapper").style.display="none";
-  }, 3000;
+  }, 3000);
 }
