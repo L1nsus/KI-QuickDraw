@@ -38,6 +38,9 @@ html {
   font-variant-numeric: tabular-nums;
 }
 
+.fullpage{
+  font-size:80vh;
+}
 .monospace {
   font-family: "Roboto Mono", monospace;
 }
