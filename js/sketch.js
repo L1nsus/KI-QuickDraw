@@ -55,8 +55,8 @@ function loadData(){
     }).catch(ERR => {
       console.error(ERR);
       document.getElementById("info-wrapper").style.display="block";
-      document.getElementById("info-text").innerHTML="Folgender Fehler ist aufgetreten:<br>" +
-        ERR + "<br><i class=\"material-icons w3-jumbo\">sync_problem</i>";
+      document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-jumbo\">sync_problem</i> Folgender \
+        Fehler ist aufgetreten:<br><div class=\"monospace\">" + ERR + "</div>";
       throw(ERR);
       return null;
     });
