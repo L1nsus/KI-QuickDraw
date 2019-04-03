@@ -39,28 +39,17 @@ html {
 }
 
 .dlicon{
-  animation: dlicon-anim 900ms ease-in-out 200ms infinite;
+  animation: dlicon-anim 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite alternate both;
 }
 
 @keyframes dlicon-anim {
-  0%, 100% {
-    transform: translateX(0%);
-    transform-origin: 50% 50%;
+  from {
+    transform: scale(1);
+    opacity: 1;
   }
-  15% {
-    transform: translateX(-30px) rotate(-6deg);
-  }
-  30% {
-    transform: translateX(15px) rotate(6deg);
-  }
-  45% {
-    transform: translateX(-15px) rotate(-3.6deg);
-  }
-  60% {
-    transform: translateX(9px) rotate(2.4deg);
-  }
-  75% {
-    transform: translateX(-6px) rotate(-1.2deg);
+  to {
+    transform: scale(0);
+    opacity: 0.5;
   }
 }
 
