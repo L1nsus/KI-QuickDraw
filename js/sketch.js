@@ -32,6 +32,7 @@ function loadData(){
     <br>Es werden nun Datensets geladen: Dies kann mehrere Minuten in Anspruch nehmen.\
     <br><div class=\"w3-center\">Bitte haben sie Geduld...</div>";
   window.setTimeout( () => {
+    document.getElementById("info-wrapper").style.display="none";
     loadDataFromFile("./data/apples10000.bin").then( DATA =>{
       appleDataArray = DATA;
       loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
@@ -59,5 +60,5 @@ function loadData(){
       throw(ERR);
       return null;
     });
-  }, 3000);
+  }, 5000);
 }
