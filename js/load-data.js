@@ -35,7 +35,7 @@ async function loadDataFromFile(URL){
 function updateModal(percentage, URL){
   document.getElementById("progbar-text").innerHTML="Gerade wird der Datensatz &#187;" + 
     URL.split("/").reverse()[0] + 
-    "&#171; geladen. <i class=\" dlicon material-icons\">save_alt</i><br><div class=\"w3-center\"><span class=\"num\">" +
+    "&#171; geladen. <i class=\" dlicon material-icons w3-display-topright\">save_alt</i><br><div class=\"w3-center\"><span class=\"num\">" +
     Math.round(percentage) + "</span>% fertig</div>";
   document.getElementById("progbar").style.width=percentage+"%";
 }
