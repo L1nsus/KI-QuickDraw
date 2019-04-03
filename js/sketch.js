@@ -1,5 +1,5 @@
 let clrButton;
-let appleDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
+let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
 
 function setup(){
   // Create Canvas
@@ -14,6 +14,8 @@ function setup(){
   
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
+  
+  window.setTimeout(() => document.getElementById("loading-init-wrapper").style.display="none", 1000);
 }
 
 function draw(){
@@ -34,7 +36,7 @@ function loadData(){
   window.setTimeout( () => {
     document.getElementById("info-wrapper").style.display="none";
     loadDataFromFile("./data/apples10000.bin").then( DATA =>{
-      appleDataArray = DATA;
+      applesDataArray = DATA;
       loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
         basketballsDataArray = DATA;
         loadDataFromFile("./data/lightbulbs10000.bin").then( DATA => {
