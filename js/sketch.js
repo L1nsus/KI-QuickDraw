@@ -55,10 +55,9 @@ function loadData(){
       return null;
     });
     document.getElementById("info-wrapper").style.display="block";
-    document.getElementById("info-text").innerHTML="<div class=\"w3-xxlarge\">\
+    document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
       <span onclick=\"document.getElementById(\'info-wrapper\').style.display=\'none\'\"\
         class=\"w3-button w3-display-topright\"><i class=\"material-icons w3-xlarge\">cancel</i></span>\
-      Fertig <i class=\"material-icons\">cloud_done</i></div>";
-    document.getElementById("info-wrapper").style.display="none";
+      Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
   }, 3000);
 }
