@@ -1,5 +1,5 @@
 let clrButton;
-let appleDataArray, basketballsDataArray;//, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
+let appleDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
 
 function setup(){
   // Create Canvas
@@ -27,24 +27,38 @@ function draw(){
 }
 
 function loadData(){
-  loadDataFromFile("./data/apples10000.bin").then( DATA =>{
-    appleDataArray = DATA;
-    loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
-      basketballsDataArray = DATA;
-      loadDataFromFile("./data/lightbulbs10000.bin").then( DATA => {
-        lightbulbsDataArray = DATA;
-        loadDataFromFile("./data/pizzas10000.bin").then( DATA => {
-          pizzasDataArray = DATA;
-          loadDataFromFile("./data/swords10000.bin").then( DATA => {
-            swordsDataArray = DATA;
+  document.getElementById("info-wrapper").style.display="block";
+  document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-xxlarge\">cloud_download</i>\
+    <br>Es werden nun Datensets geladen: Dies kann mehrere Minuten in Anspruch nehmen.\
+    <br><div class=\"w3-center\">Bitte haben sie Geduld...</div>";
+  window.setTimeout( () => {
+    loadDataFromFile("./data/apples10000.bin").then( DATA =>{
+      appleDataArray = DATA;
+      loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
+        basketballsDataArray = DATA;
+        loadDataFromFile("./data/lightbulbs10000.bin").then( DATA => {
+          lightbulbsDataArray = DATA;
+          loadDataFromFile("./data/pizzas10000.bin").then( DATA => {
+            pizzasDataArray = DATA;
+            loadDataFromFile("./data/swords10000.bin").then( DATA => {
+              swordsDataArray = DATA;
+            });
           });
         });
       });
+    }).catch(ERR => {
+      console.err(ERR);
+      document.getElementById("info-wrapper").style.display="block";
+      document.getElementById("info-text").innerHTML="Folgender Fehler ist aufgetreten:<br>" +
+        ERR + "<br><i class=\"material-icons w3-jumbo\">sync_problem</i>";
+      throw(ERR);
+      return null;
     });
-  }).catch(ERR => {
-    console.err(ERR);
-    console.log(this);
-    arguments.callee();
-    return;
-  });
+    document.getElementById("info-wrapper").style.display="block";
+    document.getElementById("info-text").innerHTML="<div class=\"w3-xxlarge\">\
+      <span onclick=\"document.getElementById(\'info-wrapper\').style.display=\'none\'\"\
+        class=\"w3-button w3-display-topright\"><i class=\"material-icons w3-xlarge\">cancel</i></span>\
+      Fertig<br><i class=\"material-icons\">cloud_done</i></div>";
+    document.getElementById("info-wrapper").style.display="none";
+  }, 3000;
 }
