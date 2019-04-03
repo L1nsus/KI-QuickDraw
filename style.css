@@ -1,4 +1,4 @@
-canvas{
+canvas {
   border: 1px solid black;
   margin-top: 16px;
   margin-left: 16px;
@@ -6,34 +6,38 @@ canvas{
   margin-bottom: 16px;
 }
 
-.footer{
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
 }
 
-.spacer{
+.spacer {
   height: 7vh;
 }
 
-.bg{
+.bg {
   background: linear-gradient(to bottom right, teal, darkcyan);
 }
 
 /*Standard Schriftart: Googles Quicksand*/
 html, body, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   letter-spacing: 0.05em;
 }
 html {
   scroll-behavior: smooth;
 }
 
-#progbar-text{
+.w3-modal-content {
   text-align: justify;
 }
 
-.num{
+.num {
   font-variant-numeric: tabular-nums;
+}
+
+.monospace {
+  font-family: "Roboto Mono", monospace;
 }
