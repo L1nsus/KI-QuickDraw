@@ -53,7 +53,7 @@ function loadData(){
         });
       });
     }).catch(ERR => {
-      console.err(ERR);
+      console.error(ERR);
       document.getElementById("info-wrapper").style.display="block";
       document.getElementById("info-text").innerHTML="Folgender Fehler ist aufgetreten:<br>" +
         ERR + "<br><i class=\"material-icons w3-jumbo\">sync_problem</i>";
