@@ -44,5 +44,7 @@ function loadData(){
   }).catch(ERR => {
     console.err(ERR);
     console.log(this);
+    arguments.callee();
+    return;
   });
 }
