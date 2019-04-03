@@ -18,11 +18,10 @@ canvas{
 }
 
 .bg{
-  /*background: linear-gradient(to bottom right, #607d8b, #009688);*/
   background: linear-gradient(to bottom right, teal, darkcyan);
 }
 
-/*Default font is Googles Quicksand*/
+/*Standard Schriftart: Googles Quicksand*/
 html, body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Quicksand', sans-serif;
   letter-spacing: 0.05em;
@@ -40,15 +39,30 @@ html {
 }
 
 .dlicon{
-  animation: dlicon-blur 2s ease-in-out 200ms infinite alternate;
+  animation: dlicon-anim 900ms ease-in-out 200ms infinite;
 }
 
-@keyframes dlicon-blur {
-  0% {
-    filter: blur(0) opacity(100%);
+@keyframes dlicon-anim {
+  0%, 100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
   }
-  100% {
-    filter: blur(12px) opacity(0%);
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
   }
 }
+
+
 
