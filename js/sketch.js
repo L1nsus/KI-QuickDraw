@@ -51,23 +51,23 @@ function loadData(){
     w3.hide("#info-wrapper");
     loadDataFromFile("./data/apples10000.bin").then( DATA =>{
       applesDataArray = DATA;
+      prepareData(apples, applesDataArray);
       loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
         basketballsDataArray = DATA;
+        prepareData(basketballs, basketballsDataArray);
         loadDataFromFile("./data/lightbulbs10000.bin").then( DATA => {
           lightbulbsDataArray = DATA;
+          prepareData(lightbulbs, lightbulbsDataArray);
           loadDataFromFile("./data/pizzas10000.bin").then( DATA => {
             pizzasDataArray = DATA;
+            prepareData(pizzas, pizzasDataArray);
             loadDataFromFile("./data/swords10000.bin").then( DATA => {
               swordsDataArray = DATA;
+              prepareData(swords, swordsDataArray);
               w3.show("#info-wrapper");
               document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
                 </span>Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
               w3.show("#info-x-button");
-              prepareData(apples, applesDataArray);
-              prepareData(basketballs, basketballsDataArray);
-              prepareData(lightbulbs, lightbulbsDataArray);
-              prepareData(pizzas, pizzasDataArray);
-              prepareData(swords, swordsDataArray);
             });
           });
         });
