@@ -46,3 +46,17 @@ html {
 .transparent{
   background-color:rgba(0, 0, 0, 0);
 }
+
+.toast{
+  visibility: hidden;
+  min-width: 16vw;
+  margin-right: -50vw;
+  text-align: center;
+  border-radius: 1vh;
+  padding: 16px;
+  position: fixed;
+  z-index: 99;
+  left: 50%;
+  bottom: 8vh;
+  font-size: inherit;
+}
