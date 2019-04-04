@@ -57,11 +57,11 @@ html {
   z-index: 99;
   left: 50%;
   transform: translate(-50%, 0);
-  bottom: 8vh;
+  top: 8vh;
   font-size: inherit;
 }
 
 .toast.show{
   visibility: visible;
-  animation: animatebottom 0.75s, animatebottom 0.75s 3s reverse;
+  animation: animatetop 0.75s, animatetop 0.75s 3s reverse;
 }
