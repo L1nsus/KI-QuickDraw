@@ -14,8 +14,6 @@ function setup(){
   
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
-  
-  window.setTimeout(() => document.getElementById("loading-init-wrapper").style.display="none", 1000);
 }
 
 function draw(){
@@ -29,6 +27,7 @@ function draw(){
 }
 
 function loadData(){
+  document.getElementById("loading-init-wrapper").style.display="none"
   document.getElementById("info-wrapper").style.display="block";
   document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-display-topright w3-jumbo\">cloud_download</i>\
     <br>Es werden nun Datensets geladen: Dies kann mehrere Minuten in Anspruch nehmen.\
