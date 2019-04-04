@@ -12,6 +12,9 @@ function setup(){
   // Setzt die Leinwand bei Klick auf den Löschen-Knopf zurück
   document.getElementById("clrButton").addEventListener("click", () => background(255));
   
+  Array.form(document.getElementsByClassName("w3-modal")).forEach((e) => \
+    e.addEventListener("touched", (ev) => ev.preventDefault()));
+  
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
 }
