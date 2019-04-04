@@ -3,7 +3,11 @@ const pictureSize = 784;
 
 let clrButton;
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
-let apples, basketballs, lightbulbs, pizzas, swords;
+let apples = {};
+let basketballs = {};
+let lightbulbs = {};
+let pizzas = {};
+let swords = {};
 
 function setup(){
   w3.addClass("#init-toast", "show");
