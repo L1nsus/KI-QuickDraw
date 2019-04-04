@@ -2,6 +2,7 @@ let clrButton;
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
 
 function setup(){
+  w3.addClass("#init-toast", "show");
   // Create Canvas
   let canvas = createCanvas(560, 560);
   canvas.parent("canvas");
@@ -33,7 +34,7 @@ function draw(){
 }
 
 function loadData(){
-  w3.hide("#loading-init-wrapper");
+  w3.removeClass("#init-toast", "show");
   w3.show("#info-wrapper");
   document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-display-topright w3-jumbo\">cloud_download</i>\
     <br>Es werden nun Datensets geladen: Dies kann mehrere Minuten in Anspruch nehmen.\
