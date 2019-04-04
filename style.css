@@ -39,8 +39,11 @@ html {
   font-variant-numeric: tabular-nums;
 }
 
-.fullpage{
+.fullpage-ico{
   font-size: 70vh;
+  height: 70vh;
+  width: 70vh;
+  border-radius: 50%;
 }
 .monospace {
   font-family: "IBM Plex Mono", monospace;
