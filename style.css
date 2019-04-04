@@ -60,3 +60,8 @@ html {
   bottom: 8vh;
   font-size: inherit;
 }
+
+.toast.show{
+  visibility: visible;
+  animation: animatebottom 0.75s, animatebottom 0.75s 3s reverse;
+}
