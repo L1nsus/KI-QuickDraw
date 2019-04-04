@@ -90,9 +90,9 @@ function prepareData(category, data){
     let offset = i * pictureSize;
     let treshold = Math.floor(0.8 * totalData);
     if (i < treshold){
-      category.training[i] = data.bytes.subarray(offset, offset + pictureSize);
+      category.training[i] = data.slice(offset, offset + pictureSize);
     } else {
-      category.testing[i - treshold] = data.bytes.subarray(offset, offset + pictureSize);
+      category.testing[i - treshold] = data.slice(offset, offset + pictureSize);
     }
   }
 }
