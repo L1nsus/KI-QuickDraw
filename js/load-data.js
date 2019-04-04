@@ -3,6 +3,7 @@ async function loadDataFromFile(URL){
   let response = await fetch(URL);
   
   w3.show("#progbar-wrapper");
+  w3.addStyle("body", "overflow", "hidden");
 
   const reader = response.body.getReader();
   const contentLength = +response.headers.get('Content-Length');
@@ -29,6 +30,7 @@ async function loadDataFromFile(URL){
     position += chunk.length;
   }
   w3.hide("#progbar-wrapper");
+  w3.addStyle("body", "overflow", "initial");
   return await Promise.resolve(chunksAll);
 }
 
