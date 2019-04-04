@@ -19,7 +19,7 @@ async function loadDataFromFile(URL){
     chunks.push(value);
     receivedLength += value.length;
     
-    updateModal(100 * (receivedLength / contentLength), URL);
+    updateModal(receivedLength, contentLength, URL);
   }
 
   let chunksAll = new Uint8Array(receivedLength);
@@ -32,9 +32,12 @@ async function loadDataFromFile(URL){
   return await Promise.resolve(chunksAll);
 }
 
-function updateModal(percentage, URL){
+function updateModal(receivedLength, contentLength, URL){
+  let perc = 100 * (receivedLength / contentLength);
+  let len = contentLength.toString().length;
   document.getElementById("progbar-text").innerHTML="Gerade wird der Datensatz &#187;" +  URL.split("/").reverse()[0] + 
     "&#171; geladen. <i class=\"material-icons w3-display-topright\">save_alt</i><br><div class=\"w3-center\">\
-      <span class=\"num\">" + Math.round(percentage) + "</span>% fertig</div>";
-  document.getElementById("progbar").style.width=percentage+"%";
+    <span class=\"num\">" + Math.round(perc) + "</span>% fertig (<span class=\"\">" + nf(receivedLength, len) + 
+    "</span>/<span class=\"\">" + contentLength + "</span>)</div>";
+  document.getElementById("progbar").style.width=perc+"%";
 }
