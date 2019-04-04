@@ -57,10 +57,10 @@ html {
   z-index: 99;
   left: 50%;
   transform: translate(-50%, 0);
-  top: 5vh;
+  top: 0px;
 }
 
 .toast.show{
   visibility: visible;
-  animation: animatetop 500ms, animatetop 500ms 2300ms reverse;
+  animation: animatetop 500ms, animatetop 500ms 2500ms reverse;
 }
