@@ -12,8 +12,7 @@ function setup(){
   // Setzt die Leinwand bei Klick auf den Löschen-Knopf zurück
   document.getElementById("clrButton").addEventListener("click", () => background(255));
   
-  Array.form(document.getElementsByClassName("w3-modal")).forEach((e) => \
-    e.addEventListener("touched", (ev) => ev.preventDefault()));
+  w3.addStyle("body", "overflow", "hidden");
   
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
@@ -30,6 +29,7 @@ function draw(){
 }
 
 function loadData(){
+  w3.addStyle("body", "overflow", "hidden");
   w3.hide("#loading-init-wrapper");
   w3.show("#info-wrapper");
   document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-display-topright w3-jumbo\">cloud_download</i>\
@@ -37,6 +37,7 @@ function loadData(){
     <br><div class=\"w3-center\">Bitte haben sie Geduld...</div>";
   window.setTimeout( () => {
     w3.hide("#info-wrapper");
+    w3.addStyle("body", "overflow", "initial");
     loadDataFromFile("./data/apples10000.bin").then( DATA =>{
       applesDataArray = DATA;
       loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
@@ -48,8 +49,10 @@ function loadData(){
             loadDataFromFile("./data/swords10000.bin").then( DATA => {
               swordsDataArray = DATA;
               w3.show("#info-wrapper");
+              w3.addStyle("body", "overflow", "hidden");
               document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
-                <span onclick=\"document.getElementById(\'info-wrapper\').style.display=\'none\'\"\
+                <span onclick=\"w3.hide(\'info-wrapper\');\
+                  w3.addStyle(\'body\', \'overflow\', \'initial\');\"\
                   class=\"w3-button w3-display-topright\"><i class=\"material-icons w3-xlarge\">cancel</i></span>\
                 Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
             });
@@ -59,6 +62,7 @@ function loadData(){
     }).catch(ERR => {
       console.error(ERR);
       w3.show("#info-wrapper");
+      w3.addStyle("body", "overflow", "hidden");
       document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-xxlarge\">sync_problem</i> Folgender \
         Fehler ist aufgetreten:<hr><div class=\"monospace\">" + ERR + "</div>";
       throw(ERR);
