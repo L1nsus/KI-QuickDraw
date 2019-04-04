@@ -1,5 +1,9 @@
+const totalData = 10000;
+const pictureSize = 784;
+
 let clrButton;
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
+let apples, basketballs, lightbulbs, pizzas, swords;
 
 function setup(){
   w3.addClass("#init-toast", "show");
@@ -69,3 +73,23 @@ function loadData(){
     });
   }, 5000);
 }
+
+function prepareData(category, data){
+  category.training = [];
+  category.testing = [];
+  for (let i = 0; i < totalData; i++){
+    let offset = i * pictureSize;
+    let treshold = floor(0.8 * totalData);
+    if (i < treshold){
+      category.training[i] = data.bytes.subarray(offset, offset + pictureSize);
+    } else {
+      category.testing[i - treshold] = data.bytes.subarray(offset, offset + pictureSize);
+    }
+  }
+}
+
+prepareData(apples, applesDataArray);
+prepareData(basketballs, basketballsDataArray);
+prepareData(lightbulbs, lightbulbsDataArray);
+prepareData(pizzas, pizzasDataArray);
+prepareData(swords, swordsDataArray);
