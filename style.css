@@ -57,7 +57,7 @@ html {
   z-index: 99;
   left: 50%;
   transform: translate(-50%, 0);
-  top: 0px;
+  top: 5px;
 }
 
 .toast.show{
