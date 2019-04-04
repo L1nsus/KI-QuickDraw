@@ -27,13 +27,13 @@ function draw(){
 }
 
 function loadData(){
-  /*document.getElementById("loading-init-wrapper").style.display="none"*/ w3.hide("#loading-init-wrapper");
-  /*document.getElementById("info-wrapper").style.display="block";*/ w3.show("#info-wrapper");
+  w3.hide("#loading-init-wrapper");
+  w3.show("#info-wrapper");
   document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-display-topright w3-jumbo\">cloud_download</i>\
     <br>Es werden nun Datensets geladen: Dies kann mehrere Minuten in Anspruch nehmen.\
     <br><div class=\"w3-center\">Bitte haben sie Geduld...</div>";
   window.setTimeout( () => {
-    document.getElementById("info-wrapper").style.display="none";
+    w3.hide("#info-wrapper");
     loadDataFromFile("./data/apples10000.bin").then( DATA =>{
       applesDataArray = DATA;
       loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
@@ -44,7 +44,7 @@ function loadData(){
             pizzasDataArray = DATA;
             loadDataFromFile("./data/swords10000.bin").then( DATA => {
               swordsDataArray = DATA;
-              document.getElementById("info-wrapper").style.display="block";
+              w3.show("#info-wrapper");
               document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
                 <span onclick=\"document.getElementById(\'info-wrapper\').style.display=\'none\'\"\
                   class=\"w3-button w3-display-topright\"><i class=\"material-icons w3-xlarge\">cancel</i></span>\
@@ -55,9 +55,9 @@ function loadData(){
       });
     }).catch(ERR => {
       console.error(ERR);
-      document.getElementById("info-wrapper").style.display="block";
-      document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-jumbo\">sync_problem</i> Folgender \
-        Fehler ist aufgetreten:<br><div class=\"monospace\">" + ERR + "</div>";
+      w3.show("#info-wrapper");
+      document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-xxlarge\">sync_problem</i> Folgender \
+        Fehler ist aufgetreten:<hr><div class=\"monospace\">" + ERR + "</div>";
       throw(ERR);
       return null;
     });
