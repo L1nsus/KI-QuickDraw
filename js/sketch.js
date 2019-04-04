@@ -14,6 +14,12 @@ function setup(){
   
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
+  
+  document.getElementById("info-x-button").addEventListener("click", (...ev) => {
+      w3.hide("#info-x-button");
+      w3.hide("#info-wrapper");
+    }
+  );
 }
 
 function draw(){
@@ -46,8 +52,8 @@ function loadData(){
               swordsDataArray = DATA;
               w3.show("#info-wrapper");
               document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
-                <span onclick=\"w3.hide(\'info-wrapper\');\"class=\"w3-button w3-display-topright\"><i class=\"material-icons \
-                w3-jumbo w3-red w3-hover-black\">cancel</i></span>Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
+                </span>Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
+              w3.show("#info-x-button");
             });
           });
         });
@@ -55,8 +61,8 @@ function loadData(){
     }).catch(ERR => {
       console.error(ERR);
       w3.show("#info-wrapper");
-      document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-xxlarge\">sync_problem</i> Folgender \
-        Fehler ist aufgetreten:<hr><div class=\"monospace\">" + ERR + "</div>";
+      document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-xxlarge\">sync_problem</i> \
+        Folgender Fehler ist aufgetreten:<hr><div class=\"monospace\">" + ERR + "</div>";
       throw(ERR);
       return null;
     });
