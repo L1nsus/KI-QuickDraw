@@ -83,7 +83,7 @@ function prepareData(category, data){
   category.testing = [];
   for (let i = 0; i < totalData; i++){
     let offset = i * pictureSize;
-    let treshold = floor(0.8 * totalData);
+    let treshold = Math.floor(0.8 * totalData);
     if (i < treshold){
       category.training[i] = data.bytes.subarray(offset, offset + pictureSize);
     } else {
