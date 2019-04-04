@@ -30,8 +30,9 @@ html {
   scroll-behavior: smooth;
 }
 
-.w3-modal-content {
+.w3-modal, .w3-modal-content {
   text-align: justify;
+  overflow: hidden;
 }
 
 .num {
