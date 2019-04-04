@@ -63,5 +63,15 @@ html {
 
 .toast.show{
   visibility: visible;
-  animation: animatetop 0.75s, animatetop 0.75s 3s reverse;
+  animation: animatetop 0.75s, fadeout 0.75s 3s;
+}
+
+@keyframes fadeout{
+  from{
+    top:-300px;
+    opacity:0;
+  } to{
+    top:0;
+    opacity:1;
+  }
 }
