@@ -29,7 +29,7 @@ function setup(){
   document.getElementById("clrButton").addEventListener("click", () => background(255));
   
   document.getElementById("login-button").addEventListener("click", 
-    () => window.location.assign("https://github.com/Linde0404/KI-QuickDraw/"));
+    () => window.location.assign("https://github.com/login?return_to=%2FLinde0404%2FKI-QuickDraw"));
   
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
@@ -78,6 +78,32 @@ function loadData(){
               document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
                 </span>Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
               w3.show("#info-x-button");
+              
+              let nn = new NeuralNetwork(pictureSize, hiddenNodes, totalCategories);
+              
+              let training = [];
+              training = training.concat(apples.training);
+              training = training.concat(basketballs.training);
+              training = training.concat(lightbulbs.training);
+              training = training.concat(pizzas.training);
+              training = training.concat(swords.training);
+              training.prototype.shuffleArray();
+              
+              for (let i = 0; i < 1; i++) {
+                let inputs = [];
+                let data = training[i];
+                for (let j = 0; j < data.length; j++) {
+                  inputs[j] = data[j] / 255.0;
+                }
+                let label = training[i].label;
+                let targets = [0, 0, 0];
+                targets[label] = 1;
+                console.log(inputs);
+                console.log(label);
+                
+                
+                nn.train(inputs, targets);
+              }
             });
           });
         });
@@ -114,13 +140,3 @@ Array.prototype.shuffleArray = function () {
     this.sort((a, b) => Math.random() > 0.5 ? 1 : -1);
   }
 }
-
-let nn = new NeuralNetwork(pictureSize, hiddenNodes, totalCategories);
-
-let training = [];
-training = training.concat(apples.training);
-training = training.concat(basketballs.training);
-training = training.concat(lightbulbs.training);
-training = training.concat(pizzas.training);
-training = training.concat(swords.training);
-training.prototype.shuffleArray();
