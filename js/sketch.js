@@ -150,6 +150,7 @@ function trainTheNetwork(){
     console.log(inputs);
     console.log(label);
     console.log(targets);
+    console.log(i);
     nn.train(inputs, targets);
   }
 }
