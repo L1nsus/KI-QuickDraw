@@ -55,6 +55,11 @@ html {
   width: 280px;
 }
 
+.canwidth{
+  min-width:560px;
+  max-width:570px;
+}
+
 .toast{
   visibility: hidden;
   min-width: 16vw;
