@@ -1,7 +1,8 @@
 // Metadaten
 const totalData = 10000,
       pictureSize = 784,
-      hiddenNodes = 128;
+      hiddenNodes = 128,
+      strokeW = 8;
 
 let eraseMode = false;
 
@@ -54,11 +55,12 @@ function draw(){
   if (eraseMode){
     // Weißer Pinsel
     stroke(255);
+    strokeWeight(2 * strokeW);
   } else {
     // Schwarzer Pinsel
     stroke(0);
+    strokeWeight(strokeW);
   }
-  strokeWeight(8);
   if(mouseIsPressed){
     // Wenn die Maus gerückt wird, dann zeichne eine Linie
     line(pmouseX, pmouseY, mouseX, mouseY);
