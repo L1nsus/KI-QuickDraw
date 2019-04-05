@@ -8,7 +8,6 @@ const PIZZA = 4;
 const SWORD = 5;
 const totalCategories = 5;
 
-let clrButton;
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
 let apples, basketballs, lightbulbs, pizzas, swords;
 
@@ -16,7 +15,8 @@ let nn, training;
 
 function setup(){
   w3.addClass("#init-toast", "show");
-  // Create Canvas
+  
+  // Leinwand erstellen
   let canvas = createCanvas(560, 560);
   canvas.parent("canvas");
   
@@ -79,16 +79,16 @@ function loadData(){
                 </span>Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
               w3.show("#info-x-button");
               
-              let nn = new NeuralNetwork(pictureSize, hiddenNodes, totalCategories);
+              nn = new NeuralNetwork(pictureSize, hiddenNodes, totalCategories);
               
-              let training = [];
+              training = new Array();
               training = training.concat(apples.training);
               training = training.concat(basketballs.training);
               training = training.concat(lightbulbs.training);
               training = training.concat(pizzas.training);
               training = training.concat(swords.training);
               training.shuffleArray();
-              }
+              });
             });
           });
         });
@@ -108,8 +108,8 @@ function prepareData(category, data, label){
   if(category == undefined){
     category = new Object();
   }
-  category.training = [];
-  category.testing = [];
+  category.training = new Array();
+  category.testing = new Array();
   for (let i = 0; i < totalData; i++){
     let offset = i * pictureSize;
     let treshold = Math.floor(0.8 * totalData);
@@ -130,18 +130,18 @@ Array.prototype.shuffleArray = function () {
 }
 
 function trainTheNetwork(){
-for (let i = 0; i < 1; i++) {
-                let inputs = [];
-                let data = training[i];
-                for (let j = 0; j < data.length; j++) {
-                  inputs[j] = data[j] / 255.0;
-                }
-                let label = training[i].label;
-                let targets = [0, 0, 0];
-                targets[label] = 1;
-                console.log(inputs);
-                console.log(label);
-                
-                
-                nn.train(inputs, targets);
+  for (let i = 0; i < 1; i++) {
+    let inputs = new Array();
+    let data = training[i];
+    for (let j = 0; j < data.length; j++) {
+      inputs[j] = data[j] / 255.0;
+    }
+  let label = training[i].label;
+  let targets = new Array(3).fill(0);
+  targets[label] = 1;
+  console.log(inputs);
+  console.log(label);
+
+
+  nn.train(inputs, targets);
 }
