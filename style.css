@@ -75,7 +75,7 @@ html {
 
 .toast.show{
   visibility: visible;
-  animation: toast-animation 500ms, toast-animation 500ms 2500ms reverse;
+  animation: toast-animation 750ms, toast-animation 750ms 2500ms reverse;
 }
 
 @keyframes toast-animation {
