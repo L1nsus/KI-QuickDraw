@@ -52,7 +52,7 @@ html {
 }
 
 .drawbutton{
-  height: 5vw;
+  height: 45px;
   width: 280px;
   transform: rotate(90deg);
 }
