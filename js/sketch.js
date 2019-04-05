@@ -122,14 +122,10 @@ function prepareData(data, label){
 
 
 function shuffleData(DATA) {
-  return new Promise(
-    function(resolve, reject){
-      resolve(
-        DATA.map(a => [Math.random(), a])
-        .sort((a, b) => a[0] - b[0])
-        .map(a => a[1])
-      );
-    }
+  return Promise.resolve(
+    DATA.map(a => [Math.random(), a])
+    .sort((a, b) => a[0] - b[0])
+    .map(a => a[1])
   );
 }
 
