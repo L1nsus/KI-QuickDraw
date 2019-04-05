@@ -1,4 +1,8 @@
-// Other techniques for learning
+/*
+* Author: Daniel Shiffman
+* License: MIT
+* Original URL: https://raw.githubusercontent.com/CodingTrain/Toy-Neural-Network-JS/master/lib/nn.js
+*/
 
 class ActivationFunction {
   constructor(func, dfunc) {
