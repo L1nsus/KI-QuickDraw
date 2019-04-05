@@ -132,7 +132,7 @@ function trainTheNetwork(){
       inputs[j] = data[j] / 255;
     }
     let label = training[i].label;
-    let targets = new Array(3).fill(0);
+    let targets = new Array(5).fill(0);
     targets[label] = 1;
     console.log(inputs);
     console.log(label);
