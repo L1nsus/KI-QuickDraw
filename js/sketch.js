@@ -129,6 +129,7 @@ Array.prototype.shuffleArray = function () {
 }
 
 function trainTheNetwork(){
+/*  
   for (let i = 0; i < 1; i++) {
     let inputs = new Array();
     let data = training[i];
@@ -143,4 +144,5 @@ function trainTheNetwork(){
 
 
   nn.train(inputs, targets);
+*/
 }
