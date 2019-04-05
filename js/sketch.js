@@ -51,7 +51,7 @@ function draw(){
   }
 }
 
-function loadData(){
+async function loadData(){
   w3.removeClass("#init-toast", "show");
   w3.show("#info-wrapper");
   document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-display-topright w3-jumbo\">cloud_download</i>\
@@ -88,7 +88,7 @@ function loadData(){
                 .concat(pizzas.training)
                 .concat(swords.training);
               
-              training.shuffleArray();
+              await training.shuffleArray();
               
             });
           });
