@@ -1,5 +1,5 @@
 canvas {
-  border: 1px solid black;
+  border: 3px outset;
   margin-top: 16px;
   margin-left: 16px;
   margin-right: 16px;
@@ -18,7 +18,7 @@ canvas {
 }
 
 .bg {
-  background: linear-gradient(to bottom right, teal, darkcyan);
+  background: linear-gradient(to bottom right, cadetblue, lightseagreen);
 }
 
 /*Standard Schriftart: Googles Quicksand*/
