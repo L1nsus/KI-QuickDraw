@@ -72,7 +72,7 @@ async function loadData(){
   w3.show("#info-wrapper");
   document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-display-topright w3-jumbo\">cloud_download</i>\
     <br>Es werden nun Datensets geladen: Dies kann mehrere Minuten in Anspruch nehmen.\
-    <br><div class=\"w3-center\">Bitte haben sie Geduld...</div>";
+    <br><div class=\"w3-center\">Bitte haben Sie Geduld...</div>";
   window.setTimeout( () => {
     w3.hide("#info-wrapper");
     loadDataFromFile("./data/apples10000.bin").then( DATA =>{
