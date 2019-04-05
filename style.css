@@ -47,11 +47,8 @@ html {
   background-color:rgba(0, 0, 0, 0);
 }
 
-.v-h-center{
-  /*transform: translate(-50%, 0);*/
-  height: 100%;
-  width: 100%;
-  
+.xbutton{
+  height: 100%; 
 }
 
 .toast{
