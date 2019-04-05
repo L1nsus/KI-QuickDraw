@@ -29,16 +29,16 @@ function setup(){
   background(255);
   
   // Setzt die Leinwand bei Klick auf den Löschen-Knopf zurück
-  document.getElementById("clrButton").addEventListener("click", background(255));
+  document.getElementById("clrButton").addEventListener("click", () => background(255));
   
   document.getElementById("login-button").addEventListener("click", 
     () => window.open("//github.com/login?return_to=%2FLinde0404%2FKI-QuickDraw"));
   
-  document.getElementById("trainButton").addEventListener("click", trainTheNetwork());
+  document.getElementById("trainButton").addEventListener("click", () => trainTheNetwork());
   
-  document.getElementById("draw-button").addEventListener("click", () => eraseMode = false);
+  document.getElementById("draw-button").addEventListener("click", () => {eraseMode = false;});
   
-  document.getElementById("erase-button").addEventListener("click", () => eraseMode = true);
+  document.getElementById("erase-button").addEventListener("click", () => {eraseMode = true;});
   
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
