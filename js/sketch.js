@@ -30,7 +30,7 @@ function setup(){
   document.getElementById("clrButton").addEventListener("click", () => background(255));
   
   document.getElementById("login-button").addEventListener("click", 
-    () => window.location.assign("https://github.com/login?return_to=%2FLinde0404%2FKI-QuickDraw"));
+    () => window.open("//github.com/login?return_to=%2FLinde0404%2FKI-QuickDraw"));
   
   document.getElementById("trainButton").addEventListener("click", () => trainTheNetwork());
   
