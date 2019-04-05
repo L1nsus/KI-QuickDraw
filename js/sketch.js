@@ -104,9 +104,7 @@ function loadData(){
 }
 
 function prepareData(category, data, label){
-  if(category == undefined){
-    category = new Object();
-  }
+  category = new Object();
   category.training = new Array();
   category.testing = new Array();
   for (let i = 0; i < totalData; i++){
@@ -129,20 +127,18 @@ Array.prototype.shuffleArray = function () {
 }
 
 function trainTheNetwork(){
-/*  
   for (let i = 0; i < 1; i++) {
     let inputs = new Array();
     let data = training[i];
     for (let j = 0; j < data.length; j++) {
       inputs[j] = data[j] / 255.0;
     }
-  let label = training[i].label;
-  let targets = new Array(3).fill(0);
-  targets[label] = 1;
-  console.log(inputs);
-  console.log(label);
+    let label = training[i].label;
+    let targets = new Array(3).fill(0);
+    targets[label] = 1;
+    console.log(inputs);
+    console.log(label);
 
-
-  nn.train(inputs, targets);
-*/
+    nn.train(inputs, targets);
+  }
 }
