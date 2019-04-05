@@ -2,6 +2,10 @@
 * Author: Daniel Shiffman
 * License: MIT
 * Original URL: https://raw.githubusercontent.com/CodingTrain/Toy-Neural-Network-JS/master/lib/nn.js
+*********************************************
+** This file was edited and adapted to the **
+** new Standards of EMCAScript 2018        **
+*********************************************
 */
 
 class ActivationFunction {
