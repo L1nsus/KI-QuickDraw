@@ -51,9 +51,9 @@ function setup(){
 }
 
 function draw(){
-  if (erase){
+  if (eraseMode){
     // Weißer Pinsel
-    stroke(0);
+    stroke(255);
   } else {
     // Schwarzer Pinsel
     stroke(0);
