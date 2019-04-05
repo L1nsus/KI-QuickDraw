@@ -87,7 +87,9 @@ function loadData(){
                 .concat(lightbulbs.training)
                 .concat(pizzas.training)
                 .concat(swords.training);
+              
               training.shuffleArray();
+              
             });
           });
         });
@@ -121,7 +123,7 @@ function prepareData(data, label){
   return category;
 }
 
-Array.prototype.shuffleArray = function () {
+Array.prototype.shuffleArray = async function () {
   for(const i of this) {
     this.sort((a, b) => Math.random() > 0.5 ? 1 : -1);
   }
