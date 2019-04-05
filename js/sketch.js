@@ -87,9 +87,6 @@ async function loadData(){
                 .concat(lightbulbs.training)
                 .concat(pizzas.training)
                 .concat(swords.training);
-              
-              await training.shuffleArray();
-              
             });
           });
         });
@@ -123,13 +120,15 @@ function prepareData(data, label){
   return category;
 }
 
-Array.prototype.shuffleArray = async function () {
-  for(const i of this) {
-    this.sort((a, b) => Math.random() > 0.5 ? 1 : -1);
+async function shuffleData(DATA) {
+  for(const i of DATA) {
+    DATA.sort((a, b) => Math.random() > 0.5 ? 1 : -1);
   }
+  return DATA;
 }
 
 function trainTheNetwork(){
+  training = shuffleData(training);
   for (let i = 0; i < 1; i++) {
     let inputs = new Array();
     let data = training[i];
