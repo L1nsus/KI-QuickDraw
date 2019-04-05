@@ -61,19 +61,19 @@ function loadData(){
     w3.hide("#info-wrapper");
     loadDataFromFile("./data/apples10000.bin").then( DATA =>{
       applesDataArray = DATA;
-      prepareData(apples, DATA, APPLE);
+      apples = prepareData(DATA, APPLE);
       loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
         basketballsDataArray = DATA;
-        prepareData(basketballs, DATA, BASKETBALL);
+        basketballs = prepareData(DATA, BASKETBALL);
         loadDataFromFile("./data/lightbulbs10000.bin").then( DATA => {
           lightbulbsDataArray = DATA;
-          prepareData(lightbulbs, DATA, LIGHTBULB);
+          lightbulbs = prepareData(DATA, LIGHTBULB);
           loadDataFromFile("./data/pizzas10000.bin").then( DATA => {
             pizzasDataArray = DATA;
-            prepareData(pizzas, DATA, PIZZA);
+            pizzas = prepareData(DATA, PIZZA);
             loadDataFromFile("./data/swords10000.bin").then( DATA => {
               swordsDataArray = DATA;
-              prepareData(swords, DATA, SWORD);
+              swords = prepareData(DATA, SWORD);
               w3.show("#info-wrapper");
               document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
                 </span>Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
@@ -103,8 +103,8 @@ function loadData(){
   }, 5000);
 }
 
-function prepareData(category, data, label){
-  category = new Object();
+function prepareData(data, label){
+  let category = new Object();
   category.training = new Array();
   category.testing = new Array();
   for (let i = 0; i < totalData; i++){
@@ -118,6 +118,7 @@ function prepareData(category, data, label){
       category.testing[i - treshold].label = label;
     }
   }
+  return category;
 }
 
 Array.prototype.shuffleArray = function () {
