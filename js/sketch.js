@@ -10,11 +10,9 @@ const totalCategories = 5;
 
 let clrButton;
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
-let apples = {};
-let basketballs = {};
-let lightbulbs = {};
-let pizzas = {};
-let swords = {};
+let apples, basketballs, lightbulbs, pizzas, swords;
+
+let nn, training;
 
 function setup(){
   w3.addClass("#init-toast", "show");
@@ -30,6 +28,8 @@ function setup(){
   
   document.getElementById("login-button").addEventListener("click", 
     () => window.location.assign("https://github.com/login?return_to=%2FLinde0404%2FKI-QuickDraw"));
+  
+  document.getElementById("train-button").addEventListener("click", () => trainTheNetwork());
   
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
@@ -87,22 +87,7 @@ function loadData(){
               training = training.concat(lightbulbs.training);
               training = training.concat(pizzas.training);
               training = training.concat(swords.training);
-              training.prototype.shuffleArray();
-              
-              for (let i = 0; i < 1; i++) {
-                let inputs = [];
-                let data = training[i];
-                for (let j = 0; j < data.length; j++) {
-                  inputs[j] = data[j] / 255.0;
-                }
-                let label = training[i].label;
-                let targets = [0, 0, 0];
-                targets[label] = 1;
-                console.log(inputs);
-                console.log(label);
-                
-                
-                nn.train(inputs, targets);
+              training.shuffleArray();
               }
             });
           });
@@ -120,6 +105,9 @@ function loadData(){
 }
 
 function prepareData(category, data, label){
+  if(category == undefined){
+    category = new Object();
+  }
   category.training = [];
   category.testing = [];
   for (let i = 0; i < totalData; i++){
@@ -139,4 +127,21 @@ Array.prototype.shuffleArray = function () {
   for(const i of this) {
     this.sort((a, b) => Math.random() > 0.5 ? 1 : -1);
   }
+}
+
+function trainTheNetwork(){
+for (let i = 0; i < 1; i++) {
+                let inputs = [];
+                let data = training[i];
+                for (let j = 0; j < data.length; j++) {
+                  inputs[j] = data[j] / 255.0;
+                }
+                let label = training[i].label;
+                let targets = [0, 0, 0];
+                targets[label] = 1;
+                console.log(inputs);
+                console.log(label);
+                
+                
+                nn.train(inputs, targets);
 }
