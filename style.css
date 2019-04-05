@@ -51,6 +51,12 @@ html {
   height: 100%; 
 }
 
+.drawbutton{
+  height: 5vw;
+  width: 280px;
+  transform: rotate(90deg);
+}
+
 .toast{
   visibility: hidden;
   min-width: 16vw;
