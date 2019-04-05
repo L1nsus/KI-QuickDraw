@@ -61,19 +61,19 @@ function loadData(){
     w3.hide("#info-wrapper");
     loadDataFromFile("./data/apples10000.bin").then( DATA =>{
       applesDataArray = DATA;
-      prepareData(apples, applesDataArray, APPLE);
+      prepareData(apples, DATA, APPLE);
       loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
         basketballsDataArray = DATA;
-        prepareData(basketballs, basketballsDataArray, BASKETBALL);
+        prepareData(basketballs, DATA, BASKETBALL);
         loadDataFromFile("./data/lightbulbs10000.bin").then( DATA => {
           lightbulbsDataArray = DATA;
-          prepareData(lightbulbs, lightbulbsDataArray, LIGHTBULB);
+          prepareData(lightbulbs, DATA, LIGHTBULB);
           loadDataFromFile("./data/pizzas10000.bin").then( DATA => {
             pizzasDataArray = DATA;
-            prepareData(pizzas, pizzasDataArray, PIZZA);
+            prepareData(pizzas, DATA, PIZZA);
             loadDataFromFile("./data/swords10000.bin").then( DATA => {
               swordsDataArray = DATA;
-              prepareData(swords, swordsDataArray, SWORD);
+              prepareData(swords, DATA, SWORD);
               w3.show("#info-wrapper");
               document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
                 </span>Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
