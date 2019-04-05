@@ -26,6 +26,9 @@ function setup(){
   // Setzt die Leinwand bei Klick auf den Löschen-Knopf zurück
   document.getElementById("clrButton").addEventListener("click", () => background(255));
   
+  document.getElementById("login-button").addEventListener("click", 
+    () => window.location.assign("https://github.com/Linde0404/KI-QuickDraw/"));
+  
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
   
