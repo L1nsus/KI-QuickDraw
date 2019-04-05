@@ -120,15 +120,14 @@ function prepareData(data, label){
   return category;
 }
 
-async function shuffleData(DATA) {
-  for(const i of DATA) {
-    DATA.sort((a, b) => Math.random() > 0.5 ? 1 : -1);
-  }
-  return DATA;
+Array.prototype.shuffleData = () => {
+  this.map(a => [Math.random(), a])
+  .sort((a, b) => a[0] - b[0])
+  .map(a => a[1]);
 }
 
 function trainTheNetwork(){
-  training = shuffleData(training);
+  training.shuffleData();
   for (let i = 0; i < 1; i++) {
     let inputs = new Array();
     let data = training[i];
