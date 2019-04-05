@@ -48,7 +48,10 @@ html {
 }
 
 .v-h-center{
-  transform: translate(-50%, -50%);
+  /*transform: translate(-50%, 0);*/
+  height: 100%;
+  width: 100%;
+  
 }
 
 .toast{
