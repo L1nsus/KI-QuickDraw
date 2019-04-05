@@ -120,17 +120,8 @@ function prepareData(data, label){
   return category;
 }
 
-
-function shuffleData(DATA) {
-  return Promise.resolve(
-    DATA.map(a => [Math.random(), a])
-    .sort((a, b) => a[0] - b[0])
-    .map(a => a[1])
-  );
-}
-
 function trainTheNetwork(){
-  shuffleData(training).then(d => console.log(d));
+  shuffle(training);
   for (let i = 0; i < 1; i++) {
     let inputs = new Array();
     let data = training[i];
