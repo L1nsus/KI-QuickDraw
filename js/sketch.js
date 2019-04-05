@@ -7,11 +7,11 @@ const totalData = 10000,
 let eraseMode = false;
 
 // Kategorien
-const APPLE = 1,
-      BASKETBALL = 2,
-      LIGHTBULB = 3,
-      PIZZA = 4,
-      SWORD = 5,
+const APPLE = 0,
+      BASKETBALL = 1,
+      LIGHTBULB = 2,
+      PIZZA = 3,
+      SWORD = 4,
       totalCategories = 5;
 
 // Daten
