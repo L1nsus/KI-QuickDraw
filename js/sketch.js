@@ -125,7 +125,7 @@ function prepareData(data, label){
 
 function trainTheNetwork(){
   shuffle(training, true);
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 1000; i++) {
     let inputs = new Array();
     let data = training[i];
     for (let j = 0; j < data.length; j++) {
