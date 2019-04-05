@@ -33,7 +33,7 @@ class Matrix {
   static subtract(a, b) {
     if (a.rows !== b.rows || a.cols !== b.cols) {
       console.error('Columns and Rows of A[' + a.rows + '/' + a.cols + 
-        ' must match Columns and Rows of B[' + b.rows + '/' + b.cols + '.');
+        '] must match Columns and Rows of B[' + b.rows + '/' + b.cols + ']');
       return;
     }
 
@@ -59,8 +59,8 @@ class Matrix {
   add(n) {
     if (n instanceof Matrix) {
       if (this.rows !== n.rows || this.cols !== n.cols) {
-        console.error('Columns and Rows of A[' + a.rows + '/' + a.cols + 
-          ' must match Columns and Rows of B[' + b.rows + '/' + b.cols + '.');
+        console.error('Columns and Rows of A[' + this.rows + '/' + this.cols + 
+          '] must match Columns and Rows of B[' + n.rows + '/' + n.cols + ']');
         return;
       }
       return this.map((e, i, j) => e + n.data[i][j]);
@@ -77,8 +77,8 @@ class Matrix {
   static multiply(a, b) {
     // Matrix product
     if (a.cols !== b.rows) {
-      console.error('Columns and Rows of A[' + a.rows + '/' + a.cols + 
-        ' must match Columns and Rows of B[' + b.rows + '/' + b.cols + '.');
+      console.error('Columns of A[' + a.cols + 
+        '] must match Rows of B[' + b.rows + ']');
       return;
     }
 
@@ -96,8 +96,8 @@ class Matrix {
   multiply(n) {
     if (n instanceof Matrix) {
       if (this.rows !== n.rows || this.cols !== n.cols) {
-        console.error('Columns and Rows of A[' + a.rows + '/' + a.cols + 
-          ' must match Columns and Rows of B[' + b.rows + '/' + b.cols + '.');
+        console.error('Columns and Rows of A[' + this.rows + '/' + this.cols + 
+          '] must match Columns and Rows of B[' + n.rows + '/' + n.cols + ']');
         return;
       }
 
