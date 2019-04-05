@@ -1,7 +1,11 @@
 /*
-* Author: Daniel Shiffman
-* License: MIT
-* Original URL: https://github.com/CodingTrain/Toy-Neural-Network-JS/blob/master/lib/matrix.js
+** Author: Daniel Shiffman
+** License: MIT
+** Original URL: https://raw.githubusercontent.com/CodingTrain/Toy-Neural-Network-JS/master/lib/matrix.js
+*********************************************
+** This file was edited and adapted to the **
+** new Standards of EMCAScript 2018        **
+*********************************************
 */
 
 
@@ -9,7 +13,7 @@ class Matrix {
   constructor(rows, cols) {
     this.rows = rows;
     this.cols = cols;
-    this.data = Array(this.rows).fill().map(() => Array(this.cols).fill(0));
+    this.data = new Array(this.rows).fill(new Array(this.cols).fill(0));//Array(this.rows).fill().map(() => Array(this.cols).fill(0));
   }
 
   copy() {
@@ -28,7 +32,7 @@ class Matrix {
 
   static subtract(a, b) {
     if (a.rows !== b.rows || a.cols !== b.cols) {
-      console.log('Columns and Rows of A must match Columns and Rows of B.');
+      console.error('Columns and Rows of A must match Columns and Rows of B.');
       return;
     }
 
@@ -54,7 +58,7 @@ class Matrix {
   add(n) {
     if (n instanceof Matrix) {
       if (this.rows !== n.rows || this.cols !== n.cols) {
-        console.log('Columns and Rows of A must match Columns and Rows of B.');
+        console.error('Columns and Rows of A must match Columns and Rows of B.');
         return;
       }
       return this.map((e, i, j) => e + n.data[i][j]);
@@ -71,7 +75,7 @@ class Matrix {
   static multiply(a, b) {
     // Matrix product
     if (a.cols !== b.rows) {
-      console.log('Columns of A must match rows of B.');
+      console.error('Columns of A must match rows of B.');
       return;
     }
 
@@ -89,7 +93,7 @@ class Matrix {
   multiply(n) {
     if (n instanceof Matrix) {
       if (this.rows !== n.rows || this.cols !== n.cols) {
-        console.log('Columns and Rows of A must match Columns and Rows of B.');
+        console.error('Columns and Rows of A must match Columns and Rows of B.');
         return;
       }
 
