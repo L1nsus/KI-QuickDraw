@@ -1,15 +1,17 @@
 // Metadaten
-const totalData = 10000;
-const pictureSize = 784;
-const hiddenNodes = 128;
+const totalData = 10000,
+      pictureSize = 784,
+      hiddenNodes = 128;
+
+let eraseMode = false;
 
 // Kategorien
-const APPLE = 1;
-const BASKETBALL = 2;
-const LIGHTBULB = 3;
-const PIZZA = 4;
-const SWORD = 5;
-const totalCategories = 5;
+const APPLE = 1,
+      BASKETBALL = 2,
+      LIGHTBULB = 3,
+      PIZZA = 4,
+      SWORD = 5,
+      totalCategories = 5;
 
 // Daten
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
@@ -27,12 +29,16 @@ function setup(){
   background(255);
   
   // Setzt die Leinwand bei Klick auf den Löschen-Knopf zurück
-  document.getElementById("clrButton").addEventListener("click", () => background(255));
+  document.getElementById("clrButton").addEventListener("click", background(255));
   
   document.getElementById("login-button").addEventListener("click", 
     () => window.open("//github.com/login?return_to=%2FLinde0404%2FKI-QuickDraw"));
   
-  document.getElementById("trainButton").addEventListener("click", () => trainTheNetwork());
+  document.getElementById("trainButton").addEventListener("click", trainTheNetwork());
+  
+  document.getElementById("draw-button").addEventListener("click", () => eraseMode = false);
+  
+  document.getElementById("erase-button").addEventListener("click", () => eraseMode = true);
   
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
@@ -45,8 +51,13 @@ function setup(){
 }
 
 function draw(){
-  // Schwarzer Pinsel
-  stroke(0);
+  if (erase){
+    // Weißer Pinsel
+    stroke(0);
+  } else {
+    // Schwarzer Pinsel
+    stroke(0);
+  }
   strokeWeight(8);
   if(mouseIsPressed){
     // Wenn die Maus gerückt wird, dann zeichne eine Linie
