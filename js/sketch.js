@@ -1,10 +1,12 @@
 const totalData = 10000;
 const pictureSize = 784;
+const hiddenNodes = 64;
 const APPLE = 1;
 const BASKETBALL = 2;
 const LIGHTBULB = 3;
 const PIZZA = 4;
 const SWORD = 5;
+const totalCategories = 5;
 
 let clrButton;
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
@@ -106,3 +108,19 @@ function prepareData(category, data, label){
     }
   }
 }
+
+Array.prototype.shuffleArray = function () {
+  for(const i of this) {
+    this.sort((a, b) => Math.random() > 0.5 ? 1 : -1);
+  }
+}
+
+let nn = new NeuronalNetwork(pictureSize, hiddenNodes, totalCategories);
+
+let training = [];
+training = training.concat(apples.training);
+training = training.concat(basketballs.training);
+training = training.concat(lightbulbs.training);
+training = training.concat(pizzas.training);
+training = training.concat(swords.training);
+training.prototype.shuffleArray();
