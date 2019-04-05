@@ -81,25 +81,24 @@ function loadData(){
               
               nn = new NeuralNetwork(pictureSize, hiddenNodes, totalCategories);
               
-              training = new Array();
-              training = training.concat(apples.training);
-              training = training.concat(basketballs.training);
-              training = training.concat(lightbulbs.training);
-              training = training.concat(pizzas.training);
-              training = training.concat(swords.training);
+              training = new Array()
+                .concat(apples.training)
+                .concat(basketballs.training)
+                .concat(lightbulbs.training)
+                .concat(pizzas.training)
+                .concat(swords.training);
               training.shuffleArray();
-              });
             });
           });
         });
       });
-    }).catch(ERR => {
+    })
+    .catch(ERR => {
       console.error(ERR);
       w3.show("#info-wrapper");
       document.getElementById("info-text").innerHTML="<i class=\"material-icons w3-xxlarge\">sync_problem</i> \
         Folgender Fehler ist aufgetreten:<hr><div class=\"monospace\">" + ERR + "</div>";
       throw(ERR);
-      return null;
     });
   }, 5000);
 }
