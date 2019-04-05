@@ -1,5 +1,10 @@
 const totalData = 10000;
 const pictureSize = 784;
+const APPLE = 1;
+const BASKETBALL = 2;
+const LIGHTBULB = 3;
+const PIZZA = 4;
+const SWORD = 5;
 
 let clrButton;
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
@@ -51,19 +56,19 @@ function loadData(){
     w3.hide("#info-wrapper");
     loadDataFromFile("./data/apples10000.bin").then( DATA =>{
       applesDataArray = DATA;
-      prepareData(apples, applesDataArray);
+      prepareData(apples, applesDataArray, APPLE);
       loadDataFromFile("./data/basketballs10000.bin").then( DATA => {
         basketballsDataArray = DATA;
-        prepareData(basketballs, basketballsDataArray);
+        prepareData(basketballs, basketballsDataArray, BASKETBALL);
         loadDataFromFile("./data/lightbulbs10000.bin").then( DATA => {
           lightbulbsDataArray = DATA;
-          prepareData(lightbulbs, lightbulbsDataArray);
+          prepareData(lightbulbs, lightbulbsDataArray, LIGHTBULB);
           loadDataFromFile("./data/pizzas10000.bin").then( DATA => {
             pizzasDataArray = DATA;
-            prepareData(pizzas, pizzasDataArray);
+            prepareData(pizzas, pizzasDataArray, PIZZA);
             loadDataFromFile("./data/swords10000.bin").then( DATA => {
               swordsDataArray = DATA;
-              prepareData(swords, swordsDataArray);
+              prepareData(swords, swordsDataArray, SWORD);
               w3.show("#info-wrapper");
               document.getElementById("info-text").innerHTML="<div class=\"w3-xxxlarge\">\
                 </span>Fertig <i class=\"material-icons w3-xxxlarge\">cloud_done</i></div>";
@@ -83,7 +88,7 @@ function loadData(){
   }, 5000);
 }
 
-function prepareData(category, data){
+function prepareData(category, data, label){
   category.training = [];
   category.testing = [];
   for (let i = 0; i < totalData; i++){
@@ -91,8 +96,10 @@ function prepareData(category, data){
     let treshold = Math.floor(0.8 * totalData);
     if (i < treshold){
       category.training[i] = data.slice(offset, offset + pictureSize);
+      category.training[i].label = label;
     } else {
       category.testing[i - treshold] = data.slice(offset, offset + pictureSize);
+      category.testing[i - treshold].label = label;
     }
   }
 }
