@@ -18,7 +18,7 @@ canvas {
 }
 
 .bg {
-  background: linear-gradient(to bottom right, lightseagreen, cyan);
+  background: linear-gradient(to bottom right, lightseagreen 0% 10%, darkcyan 70%, cyan);
 }
 
 /*Standard Schriftart: Googles Quicksand*/
