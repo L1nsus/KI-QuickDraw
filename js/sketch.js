@@ -29,7 +29,7 @@ function setup(){
   document.getElementById("login-button").addEventListener("click", 
     () => window.location.assign("https://github.com/login?return_to=%2FLinde0404%2FKI-QuickDraw"));
   
-  document.getElementById("train-button").addEventListener("click", () => trainTheNetwork());
+  document.getElementById("trainButton").addEventListener("click", () => trainTheNetwork());
   
   // Datensets nach 3 Sekunden laden
   window.setTimeout(() => loadData(), 3000);
