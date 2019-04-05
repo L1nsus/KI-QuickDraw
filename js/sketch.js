@@ -115,7 +115,7 @@ Array.prototype.shuffleArray = function () {
   }
 }
 
-let nn = new NeuronalNetwork(pictureSize, hiddenNodes, totalCategories);
+let nn = new NeuralNetwork(pictureSize, hiddenNodes, totalCategories);
 
 let training = [];
 training = training.concat(apples.training);
