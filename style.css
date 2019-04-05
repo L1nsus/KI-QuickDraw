@@ -52,9 +52,7 @@ html {
 }
 
 .drawbutton{
-  height: 45px;
   width: 280px;
-  transform: rotate(90deg);
 }
 
 .toast{
