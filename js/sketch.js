@@ -1,6 +1,9 @@
+// Metadaten
 const totalData = 10000;
 const pictureSize = 784;
-const hiddenNodes = 64;
+const hiddenNodes = 128;
+
+// Kategorien
 const APPLE = 1;
 const BASKETBALL = 2;
 const LIGHTBULB = 3;
@@ -8,9 +11,9 @@ const PIZZA = 4;
 const SWORD = 5;
 const totalCategories = 5;
 
+// Daten
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
 let apples, basketballs, lightbulbs, pizzas, swords;
-
 let nn, training;
 
 function setup(){
@@ -126,7 +129,7 @@ function trainTheNetwork(){
     let inputs = new Array();
     let data = training[i];
     for (let j = 0; j < data.length; j++) {
-      inputs[j] = data[j] / 255.0;
+      inputs[j] = data[j] / 255;
     }
     let label = training[i].label;
     let targets = new Array(3).fill(0);
