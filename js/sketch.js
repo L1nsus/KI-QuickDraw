@@ -142,7 +142,10 @@ function trainTheNetwork(){
   shuffle(training, true);
   for (let i = 0; i < training.length; i++) {
     let data = training[i];
-    let inputs = data.map(x => x / 255);
+    let inputs = new Array();
+    for (let j = 0; j < pictureSize; i++){
+      inputs[i] = data[i] / 255.0;
+    }
     let label = training[i].label;
     let targets = new Array(totalCategories).fill(0);
     targets[label] = 1;
@@ -162,7 +165,7 @@ function testTheNetwork(){
     .concat(pizzas.testing)
     .concat(swords.testing);
   let correct = 0;
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 10; i++) {
     let data = testing[i];
     let inputs = data.map(x => x / 255);
     let label = testing[i].label;
