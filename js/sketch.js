@@ -140,7 +140,7 @@ function prepareData(data, label){
 
 function trainTheNetwork(){
   shuffle(training, true);
-  for (let i = 0; i < training.length; i++) {
+  for (let i = 0; i < (training.length / 5); i++) {
     let data = training[i];
     let inputs = new Array();
     for (let j = 0; j < pictureSize; i++){
