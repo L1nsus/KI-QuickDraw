@@ -162,7 +162,7 @@ function testTheNetwork(){
     .concat(pizzas.testing)
     .concat(swords.testing);
   let correct = 0;
-  for (let i = 0; i < testing.length; i++) {
+  for (let i = 0; i < 1; i++) {
     let data = testing[i];
     let inputs = data.map(x => x / 255);
     let label = testing[i].label;
@@ -170,6 +170,10 @@ function testTheNetwork(){
         
     let m = max(guess);
     let classification = guess.indexOf(m);
+    
+    console.log(guess);
+    console.log(classification);
+    console.log(label);
     
     if (classification === label) {
       correct++;
