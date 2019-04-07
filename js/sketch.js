@@ -17,7 +17,7 @@ const APPLE = 0,
 // Daten
 let applesDataArray, basketballsDataArray, lightbulbsDataArray, pizzasDataArray, swordsDataArray;
 let apples, basketballs, lightbulbs, pizzas, swords;
-let nn, training;
+let nn, training, testing;
 
 function setup(){
   w3.addClass("#init-toast", "show");
@@ -36,6 +36,8 @@ function setup(){
     () => window.open("//github.com/login?return_to=%2FLinde0404%2FKI-QuickDraw"));
   
   document.getElementById("trainButton").addEventListener("click", () => trainTheNetwork());
+  
+  document.getElementById("testButton").addEventListener("click", () => testTheNetwork());
   
   document.getElementById("draw-button").addEventListener("click", () => {eraseMode = false;});
   
@@ -138,12 +140,9 @@ function prepareData(data, label){
 
 function trainTheNetwork(){
   shuffle(training, true);
-  for (let i = 0; i < 1000; i++) {
-    let inputs = new Array();
+  for (let i = 0; i < training.length; i++) {
     let data = training[i];
-    for (let j = 0; j < data.length; j++) {
-      inputs[j] = data[j] / 255;
-    }
+    let inputs = data.map(x => x / 255);
     let label = training[i].label;
     let targets = new Array(totalCategories).fill(0);
     targets[label] = 1;
@@ -153,4 +152,29 @@ function trainTheNetwork(){
     console.log(i);
     nn.train(inputs, targets);
   }
+}
+
+function testTheNetwork(){
+  testing = new Array()
+    .concat(apples.testing)
+    .concat(basketballs.testing)
+    .concat(lightbulbs.testing)
+    .concat(pizzas.testing)
+    .concat(swords.testing);
+  let correct = 0;
+  for (let i = 0; i < testing.length; i++) {
+    let data = testing[i];
+    let inputs = data.map(x => x / 255);
+    let label = testing[i].label;
+    let guess = nn.predict(inputs);
+        
+    let m = max(guess);
+    let classification = guess.indexOf(m);
+    
+    if (classification === label) {
+      correct++;
+    }
+  }
+  let percent = correct / testing.lenght;
+  console.log(percent);
 }
