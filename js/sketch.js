@@ -186,3 +186,14 @@ function testTheNetwork(){
   let percent = correct / testing.lenght;
   console.log(percent);
 }
+
+Array.prototype.shuffle() = function() {
+  let m = this.length, tmp, i;
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    tmp = this[m];
+    this[m] = this[i];
+    this[i] = tmp;
+  }
+  return this;
+}
