@@ -140,32 +140,37 @@ function prepareData(data, label){
 }
 
 function trainIt(){
-      return new Promise((resolve, reject) => {
-            training.shuffle();
-            for (let i = 0; i < epoch; i++) {
-              let data = training[i];
-              let inputs = new Array();
-              for (let j = 0; j < pictureSize; i++){
-                inputs[i] = data[i] / 255.0;
-              }
-              let label = training[i].label;
-              let targets = new Array(totalCategories).fill(0);
-              targets[label] = 1;
-              console.log(inputs);
-              console.log(label);
-              console.log(targets);
-              console.log(i);
-              nn.train(inputs, targets);
-            }
-        return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    training.shuffle();
+    for (let i = 0; i < epoch; i++) {
+      let data = training[i];
+      let inputs = new Array();
+      for (let j = 0; j < pictureSize; i++){
+        inputs[i] = data[i] / 255.0;
       }
-                        );
+      let label = training[i].label;
+      let targets = new Array(totalCategories).fill(0);
+      targets[label] = 1;
+      console.log(inputs);
+      console.log(label);
+      console.log(targets);
+      console.log(i);
+      nn.train(inputs, targets);
+    }
+    return Promise.resolve();
+    }
+  );
       
 }
 
 async function trainTheNetwork(){
       await trainIt();
       return;
+}
+
+Array.prototype.shuffleTheArray = async function(){
+  await this.shuffle();
+  return this;
 }
 
 function testTheNetwork(){
@@ -198,12 +203,15 @@ function testTheNetwork(){
 }
 
 Array.prototype.shuffle = function() {
-  let m = this.length, tmp, i;
-  while (m) {
-    i = Math.floor(Math.random() * m--);
-    tmp = this[m];
-    this[m] = this[i];
-    this[i] = tmp;
+  return new Promise((resolve, reject) => {
+    let m = this.length, tmp, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      tmp = this[m];
+      this[m] = this[i];
+      this[i] = tmp;
+    }
+    return Promise.resolve(this);
   }
-  return this;
+ );
 }
