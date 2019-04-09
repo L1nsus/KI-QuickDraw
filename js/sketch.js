@@ -3,6 +3,7 @@ const totalData = 10000,
       pictureSize = 784,
       hiddenNodes = 128,
       strokeW = 8;
+      epoch = 8000;
 
 let eraseMode = false;
 
@@ -140,7 +141,7 @@ function prepareData(data, label){
 
 function trainTheNetwork(){
   shuffle(training, true);
-  for (let i = 0; i < (training.length / 5); i++) {
+  for (let i = 0; i < epoch; i++) {
     let data = training[i];
     let inputs = new Array();
     for (let j = 0; j < pictureSize; i++){
