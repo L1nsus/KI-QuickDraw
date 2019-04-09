@@ -2,8 +2,8 @@
 const totalData = 10000,
       pictureSize = 784,
       hiddenNodes = 128,
-      strokeW = 8;
-      epoch = 8000;
+      strokeW = 8,
+      epoch = 2000;
 
 let eraseMode = false;
 
