@@ -143,21 +143,24 @@ function trainIt(){
       return new Promise((resolve, reject) => {
             training.shuffle();
             for (let i = 0; i < epoch; i++) {
-                  let data = training[i];
-                  let inputs = new Array();
-                  for (let j = 0; j < pictureSize; i++){
-                  inputs[i] = data[i] / 255.0;
+              let data = training[i];
+              let inputs = new Array();
+              for (let j = 0; j < pictureSize; i++){
+                inputs[i] = data[i] / 255.0;
+              }
+              let label = training[i].label;
+              let targets = new Array(totalCategories).fill(0);
+              targets[label] = 1;
+              console.log(inputs);
+              console.log(label);
+              console.log(targets);
+              console.log(i);
+              nn.train(inputs, targets);
             }
-            let label = training[i].label;
-            let targets = new Array(totalCategories).fill(0);
-            targets[label] = 1;
-            console.log(inputs);
-            console.log(label);
-            console.log(targets);
-            console.log(i);
-            nn.train(inputs, targets);
-      });
-      return Promise.resolve();
+        return Promise.resolve();
+      }
+                        );
+      
 }
 
 async function trainTheNetwork(){
