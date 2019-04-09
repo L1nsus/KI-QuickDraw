@@ -140,7 +140,7 @@ function prepareData(data, label){
 }
 
 function trainTheNetwork(){
-  shuffle(training, true);
+  training.shuffle();
   for (let i = 0; i < epoch; i++) {
     let data = training[i];
     let inputs = new Array();
@@ -187,7 +187,7 @@ function testTheNetwork(){
   console.log(percent);
 }
 
-Array.prototype.shuffle() = function() {
+Array.prototype.shuffle = function() {
   let m = this.length, tmp, i;
   while (m) {
     i = Math.floor(Math.random() * m--);
