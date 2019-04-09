@@ -140,7 +140,7 @@ function prepareData(data, label){
 }
 
 function trainIt(){
-      return new Promise(function(resolve, reject) => {
+      return new Promise((resolve, reject) => {
             training.shuffle();
             for (let i = 0; i < epoch; i++) {
                   let data = training[i];
