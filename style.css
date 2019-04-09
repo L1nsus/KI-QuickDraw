@@ -60,6 +60,10 @@ html {
   max-width:570px;
 }
 
+.canvas-wrapper{
+  overflow: hidden;
+}
+
 .toast{
   visibility: hidden;
   min-width: 16vw;
