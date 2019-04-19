@@ -8,9 +8,6 @@ let BrowserCookieManager = {
         return document.cookie.split(";");
     },
     getCookie: function (name) {
-        /* An Arrow function would refer with this to
-        the Window rather to the object itself */
-
         for (const el of this.getAllCookies()) {
             if (el.trim().startsWith(name + "=")) {
                 return el.split("=")[1];
@@ -28,9 +25,6 @@ let BrowserCookieManager = {
         return undefined;
     },
     deleteAllCookies: function () {
-        /* An Arrow function would refer with this to
-        the Window rather to the object itself */
-
         for (const el of this.getAllCookies()) {
             document.cookie = el.trim().split("=")[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
         }
