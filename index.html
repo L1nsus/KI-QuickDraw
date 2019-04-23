@@ -1,100 +1,21 @@
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="UTF-8">
-    
-    <link rel="shortcut icon" type="image/x-icon" href="//quickdraw.withgoogle.com/static/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" href="//quickdraw.withgoogle.com/static/favicon-152.png">
-    <link rel="shortcut icon" sizes="196x196" href="//quickdraw.withgoogle.com/static/favicon-196.png">
-    
-    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
-    <script src="//w3schools.com/lib/w3.js"></script>
-    
-    <script src="./js/matrix-lib.js"></script>
-    <script src="./js/neural-lib.js"></script>
-    <script src="./js/cookie-lib.js"></script>
-    <script src="./js/load-data.js"></script>
-    <script src="./js/sketch.js"></script>
-    
-    <link rel="stylesheet" href="//w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Quicksand|IBM+Plex+Mono">
-    <link rel="stylesheet" href="./style.css">
-    
-    <title>KI QuickDraw</title>
+      <meta charset="UTF-8">
+      <meta http-equiv="refresh" content="5; URL=//ki-qd.glitch.me/">
+      <title>Redirect</title>
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Abril+Fatface|Cormorant+Garamond&effect=anaglyph">
+      <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="style.css">
   </head>
-  <body class="w3-container w3-margin bg">
-    
-    <div class="w3-container w3-bar w3-light-green w3-animate-top">
-      <button class="w3-button w3-hover-green w3-bar-item" id="clrButton">
-        <i class="material-icons">delete texture</i><br>Löschen</button>
-      <button class="w3-button w3-hover-green w3-bar-item" id="trainButton">
-        <i class="material-icons">memory device_hub</i><br>Trainieren</button>
-      <button class="w3-button w3-hover-green w3-bar-item" id="testButton">
-        <i class="material-icons">spellcheck tune</i><br>Testen</button>
-      <a href="#info"><button class="w3-button w3-hover-green w3-bar-item w3-right">
-        <i class="material-icons">help info</i><br>Informationen</button></a>
-    </div>
-    
-    <div class="spacer"></div>
-    
-    <div class="w3-container w3-amber w3-center canvas-wrapper">
-      <div class="w3-animate-left" id="canvas"></div>
-      <div class="w3-animate-right w3-padding-16">
-        <button class="w3-btn drawbutton" id="draw-button"><i class="material-icons">create</i><br>zeichnen</button>
-        <button class="w3-btn drawbutton" id="erase-button"><i class="material-icons">format_paint</i><br>radieren</button>
+
+  <body>
+      <div class="float">
+        <i class="material-icons">next_week</i>
       </div>
-    </div>
-    <div class="spacer"></div>
-    <div class="w3-container w3-sand w3-text-deep-orange w3-xlarge w3-margin">
-      <div class="w3-jumbo w3-padding-large w3-container w3-center" id="info">
-        <i class="material-icons w3-jumbo">info</i> Informationen <i class="material-icons w3-jumbo">info</i>
-      </div>
-      <div class="w3-xxlarge w3-block">Was ist das hier?</div>
-      Dies ist eine graphische Version einer <i>künstlichen Intelligenz</i>, eines <i>Neuronalen Netzwerkes</i>. 
-      Sie wurde zwecks eines Schulprojektes erstellt, in welchem zukunftsweisende Techniken vorgestellt werden sollten. 
-      Die Autoren, Linus Nadler und Dominik Dreiheller, nahmen sich "Künstliche Intelligenz" als Thema. 
-      Dieses Neuronale Netzwerk wird Daten von 
-      <a href="https://experiments.withgoogle.com/quick-draw">Google QuickDraw</a> verwenden, 
-      um eine menschliche Zeichnung in folgende Kategorien einteilen:
-      <br>
-      <ul>
-        <li>Äpfel</li>
-        <li>Basketbälle</li>
-        <li>Glühbirnen</li>
-        <li>Pizzen</li>
-        <li>Schwerter</li>
-      </ul>
-    </div>
-    
-    <!-- Popups -->
-    <div class="w3-modal" id="progbar-wrapper">
-      <div class="w3-modal-content">
-        <div class="w3-margin w3-xlarge" id="progbar-text"></div>
-        <div class="w3-light-grey">
-          <div id="progbar" class="w3-container w3-green spacer" style="width:0%"></div>
-        </div>
-      </div>
-    </div>
-    <div class="w3-modal" id="info-wrapper">
-      <div class="w3-modal-content">
-        <div class="w3-margin w3-xlarge w3-rest" id="info-text"></div>
-        <div id="info-x-button" class="w3-quarter" style="display:none;">
-          <i class="material-icons w3-jumbo w3-red w3-hover-black w3-button w3-display-topright xbutton">cancel</i>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Toasts -->
-    <div class="w3-black toast w3-center" id="init-toast"><i class="material-icons w3-black w3-spin">sync</i><br>Einen Moment bitte ...</div>
-    
-    <div class="spacer"></div>
-    
-    <!-- Fußzeile -->
-    <div class="w3-container w3-center w3-gray w3-text-white w3-padding-16 mt w3-animate-bottom footer">
-      &copy; Linus Nadler, Dominik Dreiheller 2019
-      <span class="w3-hover-blue-gray w3-right" id="login-button">
-        <i class="material-icons">vpn_key</i>
-      </span>
-    </div>
+      <h1 class="font-effect-anaglyph">Dieses Projekt ist umgezogen!</h1>
+      <p>Sie werden in Kürze weitergeleitet. Bitte haben Sie einen Moment Geduld!</p>
   </body>
+
 </html>
