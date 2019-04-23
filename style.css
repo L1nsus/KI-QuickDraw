@@ -31,3 +31,70 @@ h1 {
 .material-icons {
     font-size: 6rem;
 }
+
+.animation {
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.animateout {
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 0;
+    background: blanchedalmond;
+    display: block;
+    animation: kf-animateout 500ms 4500ms ease-out both;
+}
+
+.animatein {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    pointer-events: none;
+}
+
+.animatein>.animatein {
+    width: 50%;
+    background: blanchedalmond;
+    animation: kf-animatein 500ms 250ms ease both;
+}
+
+.animatein.left {
+    left: 0;
+
+}
+
+.animatein.right {
+    right: 0;
+}
+
+@keyframes kf-animateout {
+    from {
+        height: 0;
+    }
+
+    33% {
+        height: 100vh;
+    }
+
+    67% {
+        height: 90vh;
+    }
+
+    to {
+        height: 100vh;
+    }
+}
+
+@keyframes kf-animatein {
+    from {
+        width: 50%;
+    }
+
+    to {
+        width: 0;
+    }
+}
