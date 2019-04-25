@@ -46,7 +46,7 @@ h1 {
     height: 0;
     background: blanchedalmond;
     display: block;
-    animation: kf-animateout 500ms 4500ms ease-out both;
+    animation: kf-animateout 500ms 5000ms ease-out both, kf-animateout 300ms 5500ms ease-out both;
 }
 
 .animatein {
@@ -59,7 +59,7 @@ h1 {
 .animatein>.animatein {
     width: 50%;
     background: blanchedalmond;
-    animation: kf-animatein 500ms 250ms ease both;
+    animation: kf-animatein 500ms 500ms ease both;
 }
 
 .animatein.left {
@@ -86,6 +86,15 @@ h1 {
 
     to {
         height: 100vh;
+    }
+}
+
+@keyframes kf-animateout2 {
+    from {
+        background: blanchedalmond;
+    }
+    to {
+        background: darkslateblue;
     }
 }
 
