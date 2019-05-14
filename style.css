@@ -20,18 +20,6 @@ h1 {
     letter-spacing: 1rem;
 }
 
-.float {
-    position: fixed;
-    top: 16px;
-    left: 16px;
-    background: slategray;
-    border-radius: 8px;
-}
-
-.material-icons {
-    font-size: 6rem;
-}
-
 .animation {
     position: fixed;
     top: 0;
